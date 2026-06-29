@@ -1,0 +1,40 @@
+name: Build schema
+
+# Regenerates terms.js + palette.css whenever the source CSVs (or the build
+# script) change, and commits them back so GitHub Pages serves the update.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "build/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build terms.js and palette.css
+        run: python build/build.py
+
+      - name: Commit regenerated files (if changed)
+        run: |
+          git config user.name  "ptfi-schema-bot"
+          git config user.email "actions@github.com"
+          if [ -n "$(git status --porcelain terms.js palette.css)" ]; then
+            git add terms.js palette.css
+            git commit -m "build: regenerate terms.js + palette.css from data/"
+            git push
+          else
+            echo "No changes to commit."
+          fi

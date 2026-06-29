@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PTFI Core Metadata Schema — Reference</title>
+  <meta name="description" content="Reference documentation for the Periodic Table of Food Initiative (PTFI) Core Metadata Schema — 44 elements across four categories describing every data point collected for food samples.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="palette.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Top bar ===== -->
+  <header class="topbar">
+    <div class="rainbow"></div>
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="PTFI home">
+        <img src="assets/ptfi-logo.png" alt="The Periodic Table of Food Initiative">
+        <span class="div"></span>
+        <span class="kicker">Core Metadata Schema<span>Reference &amp; data dictionary</span></span>
+      </a>
+      <div class="topsearch">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Search elements, definitions, values…" autocomplete="off" aria-label="Search metadata elements">
+      </div>
+      <button class="btn-csv" data-csv>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg>
+        Download CSV
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">Periodic Table of Food Initiative</div>
+      <h1>The PTFI Core Metadata Schema</h1>
+      <p class="lead">A harmonized, FAIR data dictionary describing every metadata element collected for a food sample — from where and when it was gathered, through its biology and laboratory processing, to the persistent ontology identifiers that make it interoperable across the world's food composition data.</p>
+      <div class="meta">
+        <span class="chip"><b id="statTotal">44</b> metadata elements</span>
+        <span class="chip"><b>4</b> categories</span>
+        <span class="chip"><b id="statReq">—</b> required at intake</span>
+        <span class="chip">Schema <b>v8.0.0</b> · Rev. 2026-06-26</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Schema map (rebuilt Figure 1) ===== -->
+  <div class="schema">
+    <div class="schema-frame">
+      <div class="schema-cap">
+        <h2>The schema at a glance — <b>Study → Specimen → Sample → Aliquot</b></h2>
+        <span class="hint">Click any category to jump to its elements</span>
+      </div>
+      <div class="facet-grid" id="facetGrid"></div>
+      <div class="roles" id="roles"></div>
+    </div>
+  </div>
+
+  <!-- ===== Body ===== -->
+  <div class="wrap">
+    <aside class="sidebar">
+      <h4>Filter by category</h4>
+      <div class="filterbar" id="filterChips"></div>
+      <h4 style="margin-top:22px">On this page</h4>
+      <ul class="sb-nav" id="sbNav"></ul>
+    </aside>
+    <main class="content" id="content"></main>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="foot">
+    <div class="foot-inner">
+      <div>
+        <img src="assets/ptfi-logo.png" alt="PTFI">
+        <p>The PTFI Core Metadata framework captures the contextual, biological, and procedural differences that drive variation in food composition — establishing a harmonized yet adaptable standard for FAIR, cross-domain data integration.</p>
+      </div>
+      <div>
+        <h4>Standards &amp; ontologies</h4>
+        <ul>
+          <li><a href="https://foodon.org/" target="_blank" rel="noopener">FoodOn ontology</a></li>
+          <li><a href="https://www.ncbi.nlm.nih.gov/taxonomy" target="_blank" rel="noopener">NCBI Taxonomy</a></li>
+          <li><a href="https://www.ebi.ac.uk/ols4" target="_blank" rel="noopener">EMBL-EBI OLS</a></li>
+          <li><a href="https://www.iso.org/iso-3166-country-codes.html" target="_blank" rel="noopener">ISO 3166 / ISO 639</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#" data-csv>Download schema (CSV)</a></li>
+          <li><a href="https://foodperiodictable.org/" target="_blank" rel="noopener">foodperiodictable.org</a></li>
+          <li><a href="https://ptfi.community.versobio.com/" target="_blank" rel="noopener">PTFI Research Community Hub</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#76055814041f181d1a130f3615111f170458190411">Questions — contact PTFI</a></li>
+        </ul>
+      </div>
+      <div class="legal">
+        Compiled from the PTFI New Food Collection Form and Core Metadata SOPs (Quality Check, FoodOn ID, Term Request). Definitions and curation guidance are normative to the PTFI curation pipeline. © The Periodic Table of Food Initiative (PTFI).
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="terms.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

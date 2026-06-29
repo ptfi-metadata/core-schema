@@ -1,0 +1,5 @@
+id,name,role,blurb,fill,accent,ink,order
+study,Study metadata,Collection metadata,Identifiers and people behind the collection study.,#E6F1FB,#0C447C,#0C447C,1
+specimen,Specimen metadata,Collection metadata,"The biological entity, collected and characterized in the field.",#E1F5EE,#085041,#085041,2
+sample,Sample metadata,Laboratory metadata,Derived from a specimen by preparation or anatomical part.,#FAEEDA,#B97B29,#8A5A18,3
+aliquot,Aliquot metadata,Laboratory metadata,The unit actually analyzed.,#EEEDFE,#3C3489,#3C3489,4
