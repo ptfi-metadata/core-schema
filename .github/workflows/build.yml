@@ -1,18 +1,23 @@
-name: Build schema
+name: Build and deploy site
 
-# Regenerates terms.js + palette.css whenever the source CSVs (or the build
-# script) change, and commits them back so GitHub Pages serves the update.
+# On every push to main: regenerate terms.js + palette.css from the CSV sources
+# and deploy the whole site to GitHub Pages. Nothing is committed back to the
+# repo - the generated files exist only in the published site.
 on:
   push:
     branches: [main]
-    paths:
-      - "data/**"
-      - "build/**"
-      - ".github/workflows/build.yml"
   workflow_dispatch: {}
 
+# Least-privilege: read the repo, publish to Pages. No write access to contents.
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; don't pile up overlapping ones.
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -24,17 +29,21 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build terms.js and palette.css
+      - name: Generate terms.js + palette.css from data/
         run: python build/build.py
 
-      - name: Commit regenerated files (if changed)
-        run: |
-          git config user.name  "ptfi-schema-bot"
-          git config user.email "actions@github.com"
-          if [ -n "$(git status --porcelain terms.js palette.css)" ]; then
-            git add terms.js palette.css
-            git commit -m "build: regenerate terms.js + palette.css from data/"
-            git push
-          else
-            echo "No changes to commit."
-          fi
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

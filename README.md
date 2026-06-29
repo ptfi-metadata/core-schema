@@ -17,13 +17,13 @@ data/
   groups.csv      ← SOURCE OF TRUTH — the 4 groups + their colours (edit here)
 build/
   build.py        ← compiler: CSV → terms.js + palette.css
-terms.js          ← GENERATED — never edit by hand
-palette.css       ← GENERATED — never edit by hand
+terms.js          ← GENERATED at deploy time — not stored in the repo
+palette.css       ← GENERATED at deploy time — not stored in the repo
 index.html        ← page shell (links palette.css + styles.css + terms.js + app.js)
 app.js            ← render engine (reads terms.js) — stable
 styles.css        ← layout/design — stable
 assets/           ← logo, etc.
-.github/workflows/build.yml  ← runs build.py on every push to data/
+.github/workflows/build.yml  ← builds + deploys the site to Pages on every push
 ```
 
 Only the two files in `data/` are edited. Everything below them is produced by
@@ -44,15 +44,20 @@ change when the schema changes.
    `data/groups.csv` (a group name, blurb, or colour). You can edit these in
    Excel and "Save As CSV".
 2. Regenerate:
-   - **Automatic:** push to `main`. The GitHub Action runs `build.py` and commits
-     the new `terms.js` + `palette.css`; Pages then serves the update.
-   - **Manual:** run `python build/build.py` locally and commit.
+   - **Automatic:** push to `main`. The GitHub Action runs `build.py`, regenerates
+     `terms.js` + `palette.css`, and deploys the whole site to GitHub Pages.
+     Nothing is committed back to the repo — the generated files live only in the
+     published site, so the Action needs no write access to the repository.
 
-To preview locally, serve over HTTP (so the browser can load the JS/CSS):
+To preview locally, first generate the two files, then serve over HTTP:
 
 ```bash
-python3 -m http.server   # then open http://localhost:8000
+python build/build.py        # creates terms.js + palette.css locally
+python3 -m http.server       # then open http://localhost:8000
 ```
+
+(`terms.js` and `palette.css` are git-ignored — they're regenerated on every
+deploy, so they are never committed.)
 
 ## Source columns
 

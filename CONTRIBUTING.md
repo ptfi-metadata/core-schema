@@ -35,18 +35,21 @@ group.
 ## Publish
 
 - **Just push** to `main`. A GitHub Action runs `build/build.py`, regenerates
-  `terms.js` + `palette.css`, commits them, and GitHub Pages serves the update.
-- Prefer to do it locally? Run `python build/build.py`, then commit everything.
+  `terms.js` + `palette.css`, and deploys the site to GitHub Pages. Nothing is
+  committed back — the generated files are not stored in the repo.
 
 ## Preview locally
 
 ```bash
-python3 -m http.server   # open http://localhost:8000
+python build/build.py        # generate terms.js + palette.css locally
+python3 -m http.server       # open http://localhost:8000
 ```
 
-(Opening `index.html` with `file://` won't load the data — use the server.)
+(`terms.js` / `palette.css` are git-ignored and generated on deploy; build them
+locally just for preview. Opening `index.html` with `file://` won't load the data.)
 
 ## One-time repo settings
 
-- Settings → Actions → General → Workflow permissions → **Read and write**.
-- Settings → Pages → Source → **Deploy from a branch: `main` / root**.
+- Settings → Pages → Source → **GitHub Actions**.
+  (No "read and write" Actions permission is needed — deployment uses the
+  least-privilege Pages permission instead.)
