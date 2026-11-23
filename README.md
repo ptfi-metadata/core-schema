@@ -104,7 +104,7 @@ If you use the PTFI Core Metadata Schema, please cite the archived release
 
 > Gallo-Franco J.J., Brinkley S.C., Laporte M.-A., Toulabi S.B., Sehar A., Dooley D.,
 > Agudelo D., Chaparro J.M., Prenni J.E., Chien C.-M., de la Parra J., Arnaud E.,
-> Ahmed S. *Proposing a global food systems metadata schema capturing sources of
+> Ahmed S., Suescum Holguin J. *Proposing a global food systems metadata schema capturing sources of
 > food composition variation.* (in preparation)
 
 Citation metadata are in [`CITATION.cff`](CITATION.cff) (GitHub's "Cite this
