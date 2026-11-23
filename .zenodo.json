@@ -1,7 +1,7 @@
 {
   "title": "PTFI Core Metadata Schema: a global food systems metadata schema capturing sources of food composition variation",
   "upload_type": "dataset",
-  "description": "Core metadata schema of the Periodic Table of Food Initiative (PTFI): 47 metadata elements organized in four levels (Study, Specimen, Sample, Aliquot), with definitions, obligation levels, controlled vocabularies and mappings to Darwin Core and Dublin Core, together with the curation Standard Operating Procedures (SOPs v2.0: quality check, FoodOn/NCBITaxon term assignment and FoodOn term requests) and the code that generates the online reference (https://ptfi-metadata.github.io/core-schema/). This record accompanies the article \"Proposing a global food systems metadata schema capturing sources of food composition variation\".",
+  "description": "Core metadata schema of the Periodic Table of Food Initiative (PTFI): 47 metadata elements organized in four levels (Study, Specimen, Sample, Aliquot), with definitions, obligation levels, controlled vocabularies and mappings to Darwin Core and Dublin Core, together with the curation Standard Operating Procedures (SOPs v2.1: quality check, FoodOn/NCBITaxon term assignment and FoodOn term requests) and the code that generates the online reference (https://ptfi-metadata.github.io/core-schema/). This record accompanies the article \"Proposing a global food systems metadata schema capturing sources of food composition variation\".",
   "version": "8.0.0",
   "license": "cc-by-4.0",
   "access_right": "open",
