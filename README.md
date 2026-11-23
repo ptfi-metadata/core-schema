@@ -1,5 +1,7 @@
 # PTFI Core Metadata Schema
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24482298.svg)](https://doi.org/10.5281/zenodo.24482298)
+
 A FAIR reference / data dictionary for every metadata variable collected for a
 food sample in the Periodic Table of Food Initiative (PTFI). The site is the
 same reference layout the team reviewed; the schema behind it is now driven by a
@@ -99,8 +101,18 @@ PTFI terms. Borrowed vocabularies are referenced, never re-hosted.
 
 ## How to cite
 
-If you use the PTFI Core Metadata Schema, please cite the archived release
-(Zenodo DOI: *to be added on release v8.0.0*) and the accompanying article:
+If you use the PTFI Core Metadata Schema, please cite the archived release on
+Zenodo and the accompanying article.
+
+> Gallo-Franco J.J., Brinkley S.C., Laporte M.-A., Toulabi S.B., Sehar A., Dooley D.,
+> Agudelo D., Chaparro J.M., Prenni J.E., Chien C.-M., de la Parra J., Arnaud E.,
+> Ahmed S., Suescum Holguin J. (2026). *PTFI Core Metadata Schema* (Version 8.0.0)
+> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.24482299
+
+- All versions (always resolves to the latest): https://doi.org/10.5281/zenodo.24482298
+- Version 8.0.0: https://doi.org/10.5281/zenodo.24482299
+
+Accompanying article:
 
 > Gallo-Franco J.J., Brinkley S.C., Laporte M.-A., Toulabi S.B., Sehar A., Dooley D.,
 > Agudelo D., Chaparro J.M., Prenni J.E., Chien C.-M., de la Parra J., Arnaud E.,
