@@ -83,6 +83,32 @@ for near ones). Lab-processing fields with no external equivalent are original
 PTFI terms. Borrowed vocabularies are referenced, never re-hosted.
 
 
+## How to cite
+
+If you use the PTFI Core Metadata Schema, please cite the archived release
+(Zenodo DOI: *to be added on release v8.0.0*) and the accompanying article:
+
+> Gallo-Franco J.J., Brinkley S.C., Laporte M.-A., Toulabi S.B., Sehar A., Dooley D.,
+> Agudelo D., Chaparro J.M., Prenni J.E., Chien C.-M., de la Parra J., Arnaud E.,
+> Ahmed S. *Proposing a global food systems metadata schema capturing sources of
+> food composition variation.* (in preparation)
+
+Citation metadata are in [`CITATION.cff`](CITATION.cff) (GitHub's "Cite this
+repository" button) and [`.zenodo.json`](.zenodo.json) (used by Zenodo to build
+the archived record).
+
+## Versioning
+
+The schema version is set in one place, `SCHEMA_VERSION` in `build/build.py`,
+and is shown on the website. Each GitHub release is tagged `vX.Y.Z` with the same
+number and archived on Zenodo. The SOPs in `curation/` carry their own document
+version in the file name (e.g. `_V.2.0`) and state the schema version they apply to.
+
+## License
+
+Content is licensed under [CC BY 4.0](LICENSE). Referenced ontologies (FoodOn,
+NCBITaxon, UO…) keep their own licenses.
+
 ## Current schema and review workflow
 
 The schema contains 47 variables: Study (4), Specimen (27), Sample (14), and

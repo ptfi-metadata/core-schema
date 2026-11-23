@@ -1,0 +1,16 @@
+PTFI Core Metadata Schema
+Copyright (c) 2026 The Periodic Table of Food Initiative (PTFI) and contributors
+
+The schema (data/), the curation Standard Operating Procedures (curation/),
+the documentation and all other content of this repository are licensed under
+the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:         https://creativecommons.org/licenses/by/4.0/
+
+Ontology terms referenced by this schema (e.g. FoodOn, NCBITaxon, Unit
+Ontology) are not re-hosted here and remain under their own licenses.
