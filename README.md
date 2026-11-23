@@ -15,19 +15,27 @@ single source of truth.
 data/
   schema.csv      ← SOURCE OF TRUTH — the 47 variables (edit here)
   groups.csv      ← SOURCE OF TRUTH — the 4 groups + their colours (edit here)
+curation/         ← curation SOPs (Word, versioned in the file name, e.g. _V.2.0)
 build/
-  build.py        ← compiler: CSV → terms.js + palette.css
+  build.py        ← compiler: CSV → terms.js + palette.css; holds SCHEMA_VERSION
+  test_build.py   ← schema and page consistency checks (run before pushing)
 terms.js          ← GENERATED at deploy time — not stored in the repo
 palette.css       ← GENERATED at deploy time — not stored in the repo
 index.html        ← page shell (links palette.css + styles.css + terms.js + app.js)
 app.js            ← render engine (reads terms.js) — stable
 styles.css        ← layout/design — stable
 assets/           ← logo, etc.
-.github/workflows/build.yml  ← builds + deploys the site to Pages on every push
+.github/workflows/build.yml  ← tests, builds + deploys the site to Pages on every push
+
+README.md         ← this overview
+CONTRIBUTING.md   ← how to edit the CSVs and publish
+LICENSE           ← CC BY 4.0
+CITATION.cff      ← citation metadata (GitHub "Cite this repository")
+.zenodo.json      ← metadata Zenodo uses to archive each release with a DOI
 ```
 
-Only the two files in `data/` are edited. Everything below them is produced by
-`build.py`:
+For the website, only the two files in `data/` are edited. `terms.js` and
+`palette.css` are produced by `build.py`:
 
 - `schema.csv` → `window.PTFI_FACETS` + `window.PTFI_TERMS` in `terms.js`.
 - `groups.csv` → the group definitions **and** all the colours: `palette.css`
@@ -38,6 +46,12 @@ Only the two files in `data/` are edited. Everything below them is produced by
 `index.html`, `app.js` and `styles.css` carry the design. Counts and category
 labels follow the generated data. Structural changes or new field types may
 still require code changes.
+
+The SOPs in `curation/` are replaced by uploading the new Word files with the
+updated version in the file name. `CITATION.cff` and `.zenodo.json` hold the
+authors, affiliations, ORCIDs, licence and version used for citation and for the
+Zenodo archive; update both (and `SCHEMA_VERSION` in `build/build.py`) before
+creating a new release.
 
 ## How to update
 
